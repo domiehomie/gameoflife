@@ -113,7 +113,7 @@
 	const startTick = () => {
 		if (!running) return;
 		nextGen();
-		setTimeout(startTick, 1);
+		setTimeout(startTick, 500);
 	};
 
 	const stop = (): void => {
