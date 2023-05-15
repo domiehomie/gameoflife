@@ -113,7 +113,7 @@
 	const startTick = () => {
 		if (!running) return;
 		nextGen();
-		setTimeout(startTick, 500);
+		setTimeout(startTick, 1);
 	};
 
 	const stop = (): void => {
@@ -134,9 +134,7 @@
 									class="w-8 h-8 flex select-none cursor-pointer items-center justify-itemd-center drop-shadow-sm"
 									on:click={() => toggle(x, y)}
 									on:keypress={() => toggle(x, y)}
-								>
-									{findNeighbors(x, y).reduce((a, b) => a + b, 0)}
-								</div>
+								/>
 							{/key}
 						{:else}
 							{#key cells}
@@ -144,9 +142,7 @@
 									class="w-8 h-8 flex select-none text-center cursor-pointer items-center justify-itemd-center bg-violet-400   drop-shadow-sm"
 									on:click={() => toggle(x, y)}
 									on:keypress={() => toggle(x, y)}
-								>
-									{findNeighbors(x, y).reduce((a, b) => a + b, 0)}
-								</div>
+								/>
 							{/key}
 						{/if}
 					{/each}
